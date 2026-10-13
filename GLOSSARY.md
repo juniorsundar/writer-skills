@@ -1,0 +1,75 @@
+# Writer Skills
+
+A set of agent skills for planning long-form prose fiction. The skills plan; the author writes.
+
+## Language
+
+**Manuscript**:
+The prose of the novel itself. Written only by the author; no skill writes prose into it (**Adopt** only imports the author's existing files verbatim).
+_Avoid_: draft (when meaning the prose the skills produce: they produce none)
+
+**Destination**:
+Where the story is headed: ending state (one per **Volume** in a serial, plus a faint serial ending), **Scale**, **Grounding**, genre and its obligatory scenes, theme as a Lie → Truth argument, protagonist arc type, and the overarching plot in brief. Fixed enough to write toward; redrawn only by an explicit, logged act. Planning never starts without one.
+_Avoid_: ending (the destination is more than the literal last scene)
+
+**Volume**:
+A run of chapters in a web serial with its own sharp ending and acts. A serial has a faint overall ending and a sharp ending per volume. Standalone novels have no volumes.
+_Avoid_: book, arc (when meaning a volume)
+
+**Scale**:
+How wide or narrow the story is: target length, number of POV characters, geographic and temporal span, number of subplots. Recorded in the **Destination**; every skill sizes its ceremony to it (a narrow story gets a lean **Codex** and few tickets).
+_Avoid_: scope (reserved for what is in or out of a planning effort)
+
+**Grounding**:
+What the story stands on that the author did not invent: source canon (fanfiction), historical events and periods, real places, real conditions, professions, real people. Listed in the **Destination**; facts resting on it come from research, never invention.
+_Avoid_: background, references
+
+**Divergence**:
+A deliberate, recorded departure of the story from its **Grounding** (an AU choice, a changed historical detail), noted on the **Codex** entry with what and why.
+_Avoid_: error, inaccuracy (a divergence is intended)
+
+**Redraw**:
+The explicit act of changing the **Destination**: confirmed by the author, reason logged, followed by a sweep flagging **Codex** entries and **Threads** the change may invalidate.
+
+**Map**:
+The open questions standing between the current plan and the **Destination**. One per novel, persistent: it never fully closes while the book is unfinished. Holds only what is undecided.
+
+**Codex**:
+The store of settled story facts: characters, locations, world, timeline, **Threads**. Facts enter it the moment they are decided, whether in planning or discovered in the **Manuscript**.
+_Avoid_: bible, story bible, lore
+
+**Thread**:
+Something the text has set up for later: a promise (Chekhov's gun), callback, foreshadowing, mystery, motif, or red herring. Carries a stable ID (`T07`), a MICE tag, an emphasis level, where it was planted and progressed, and a status: open, paid, or dropped.
+_Avoid_: setup, plant (as nouns for the whole entry)
+
+**Chapter skeleton**:
+The structure of one chapter, scene by scene, with no prose. The most detailed artifact any skill produces: the ceiling of "plan, don't do".
+_Avoid_: chapter draft, scene draft, outline (outline is the whole-book plot)
+
+**Summary**:
+A reverse outline condensed from a finished **Manuscript** chapter: per scene, what happens, its function, its value shift, and the **Threads** it touches.
+_Avoid_: recap, synopsis
+
+**Adopt**:
+Reverse-engineering a story written before these skills: condensing its existing **Manuscript** in order to build the **Codex**, then charting forward from the last written chapter.
+_Avoid_: import (import is only Adopt's first step), onboarding
+
+**Value shift**:
+The change a scene causes in some charged value (trust → suspicion, safe → hunted). A scene with no value shift is flagged.
+
+**Lens**:
+A craft framework (four-act midpoint, promise/progress/payoff, MICE nesting, character arcs) used as a source of diagnostic questions, never as mandatory slots.
+_Avoid_: template, beat sheet (when meaning something enforced)
+
+## Relationships
+
+- One repo holds exactly one novel (or one serial), one **Destination**, one **Map**, one **Codex**.
+- A serial's **Destination** holds one ending per **Volume**; a **Chapter skeleton** sits in exactly one volume.
+- The author writes the **Manuscript** from **Chapter skeletons**; skills never cross that line.
+- Each finished **Manuscript** chapter yields one **Summary**, which updates the **Codex** and **Threads** and may raise **Map** questions.
+- **Codex** facts resting on **Grounding** link to the research file that backs them; departures are recorded as **Divergences**.
+- **Summaries** and **Chapter skeletons** reference **Threads** by ID and **Codex** entries by link.
+
+## Flagged ambiguities
+
+- "bible" rejected as the term for the settled-facts store (too religious). Resolved: **Codex**.

@@ -45,7 +45,7 @@ Affects: ch07, ch09
 ...
 ```
 
-`Affects:` is a comma-separated list; each item is `chNN`, `act <I-IV>`, `vol N`, `vol N act <I-IV>`, or `vol N ending`. An act or volume covers every chapter the outline places in it; write a range as separate items (`vol 1 act I, vol 1 act II`). On resolution append `## Answer`, set status resolved, and append to Decisions so far one line of the form `[[ticket]]: <one clause, at most 25 words> [[detail]]`; the detail lives in the Answer and the Codex. Claim first by setting `Status: claimed`. Wire `Blocked by` only after all tickets exist; a ticket is on the frontier when open, unclaimed, and every blocker is resolved. List it with `scripts/check.sh --frontier <novel>`.
+`Affects:` is a comma-separated list; each item is `chNN`, `act <I-IV>`, `vol N`, `vol N act <I-IV>`, or `vol N ending`. An act or volume covers every chapter the outline places in it; write a range as separate items (`vol 1 act I, vol 1 act II`). On resolution append `## Answer`, set status resolved, and append to Decisions so far one line of the form `[[ticket]]: <one clause, at most 25 words> [[detail]]`; the detail lives in the Answer and the Codex. Claim first by setting `Status: claimed`. Wire `Blocked by` only after all tickets exist; a ticket is on the frontier when open, unclaimed, and every blocker is resolved. List it with this skill's bundled `scripts/check.sh --frontier <novel>`.
 
 ## Ticket types
 

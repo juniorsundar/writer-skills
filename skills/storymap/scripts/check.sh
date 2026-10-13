@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# Usage: scripts/check.sh [novel-dir ...]        lint skills + each novel's map
-#        scripts/check.sh --frontier <novel-dir>  list open, unclaimed, unblocked tickets
+# Lives at skills/storymap/scripts/check.sh, so it travels with the storymap skill.
+# Usage: check.sh [novel-dir ...]        lint stories + the skills tree
+#        check.sh --frontier <novel-dir> list open, unclaimed, unblocked tickets
 set -u
-root="$(cd "$(dirname "$0")/.." && pwd)"
+skills_dir="$(cd "$(dirname "$0")/../.." && pwd)"
+fail=0
+err() { echo "FAIL $*"; fail=1; }
 
 if [ "${1:-}" = "--frontier" ]; then
   tdir="${2:?usage: check.sh --frontier <novel-dir>}/map/tickets"
@@ -16,18 +19,17 @@ if [ "${1:-}" = "--frontier" ]; then
   done
   exit 0
 fi
-fail=0
-err() { echo "FAIL $*"; fail=1; }
 
-for skill in "$root"/.agents/skills/*/SKILL.md; do
+# Skills: frontmatter must name the directory, and relative markdown links must resolve.
+for skill in "$skills_dir"/*/SKILL.md; do
+  [ -e "$skill" ] || continue
   dir="$(dirname "$skill")"; name="$(basename "$dir")"
   [ "$(head -1 "$skill")" = "---" ] || err "$skill: no frontmatter"
   grep -q "^name: $name$" "$skill" || err "$skill: name is not '$name'"
   grep -q "^description: ." "$skill" || err "$skill: missing description"
 done
 
-# Relative markdown links in skills must resolve.
-for f in "$root"/.agents/skills/*/*.md; do
+for f in "$skills_dir"/*/*.md; do
   grep -o '](\.\{0,2\}/\?[^)#:]*\.md)' "$f" | sed 's/^](//; s/)$//' | while read -r link; do
     [ -e "$(dirname "$f")/$link" ] || echo "FAIL $f: broken link $link"
   done

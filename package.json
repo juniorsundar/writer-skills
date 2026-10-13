@@ -1,0 +1,17 @@
+{
+  "name": "writer-skills",
+  "version": "0.1.0",
+  "description": "Agent skills for planning long-form prose fiction: a destination, a persistent map of decision tickets, a codex of settled facts, chapter skeletons and chapter condensing.",
+  "keywords": [
+    "pi-package",
+    "agent-skills",
+    "writing",
+    "fiction",
+    "planning"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  }
+}
