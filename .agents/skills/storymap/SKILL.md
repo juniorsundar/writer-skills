@@ -23,7 +23,7 @@ research/<topic>.md  # sourced real-world facts
 research/canon/<topic>.md  # source-canon facts (fanfiction)
 skeletons/chNN.md
 summaries/chNN.md
-manuscript/chNN.md  # author only; skills never write here
+manuscript/chNN.md  # author only; skills never write prose here (condense Adopt imports verbatim)
 ```
 
 Use Obsidian wikilinks such as `[[mara]]` for Codex references.
@@ -68,9 +68,9 @@ Three modes. Work resolves one ticket per session, except research.
 
 ### Chart
 
-1. Call the Skill tool for "grilling" and "codex" to settle the Destination. Grill breadth-first. Fire research subagents mid-grill when a question waits on a fact. Done when Scale (including width and, for a serial, volumes), Grounding, genre, tone, and arc type are settled, and the ending is sharp for the first volume (or the whole book, if not a serial). Every other section may read `_Open._` with a matching item in Not yet specified.
+1. Call the Skill tool for "grilling" and "codex" to settle the Destination. If condense Adopt left a draft, confirm or correct each `_Inferred:_` section with the author instead of starting blank. Grill breadth-first. Fire research subagents mid-grill when a question waits on a fact. Done when Scale (including width and, for a serial, volumes), Grounding, genre, tone, and arc type are settled, and the ending is sharp for the first volume (or the whole book, if not a serial). Every other section may read `_Open._` with a matching item in Not yet specified.
 2. Write `codex/destination.md`; create `map/map.md` with its link, Notes, Decisions so far, Not yet specified, and Out of scope.
-3. Create currently specifiable tickets, then wire `Blocked by` in a second pass. Seed a research ticket for each Grounding item the plan leans on, then dispatch one subagent per research ticket with the research brief. Each subagent resolves its own ticket; append each gist to Decisions so far, and check that every promised research file exists.
+3. Create currently specifiable tickets, including, after condense Adopt, one per entry in `map/adopt-queue.md` (if present; then delete it) and per open Thread that needs a decision, and wire `Blocked by` in a second pass. Seed a research ticket for each Grounding item the plan leans on, then dispatch one subagent per research ticket with the research brief. Each subagent resolves its own ticket; append each gist to Decisions so far, and check that every promised research file exists.
 4. Stop. Charting resolves only research tickets.
 
 ### Work
