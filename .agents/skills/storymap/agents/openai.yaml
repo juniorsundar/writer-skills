@@ -1,0 +1,5 @@
+interface:
+  display_name: "Storymap"
+  short_description: "Chart a novel's planning decisions"
+policy:
+  allow_implicit_invocation: false

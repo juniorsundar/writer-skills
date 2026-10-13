@@ -1,0 +1,5 @@
+interface:
+  display_name: "Condense"
+  short_description: "Reverse-outline a finished chapter"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Skeleton"
+  short_description: "Plan one chapter without prose"
+policy:
+  allow_implicit_invocation: false

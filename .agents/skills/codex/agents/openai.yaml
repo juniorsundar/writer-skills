@@ -1,0 +1,5 @@
+interface:
+  display_name: "Codex"
+  short_description: "Keep settled story facts coherent"
+policy:
+  allow_implicit_invocation: true

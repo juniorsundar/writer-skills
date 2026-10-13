@@ -1,0 +1,36 @@
+---
+name: condense
+description: Condense one finished manuscript chapter into a reverse-outline Summary and update continuity records.
+disable-model-invocation: true
+---
+
+Input is a finished `manuscript/chNN.md`. Read it only; never edit it. This skill creates a **Summary**, updates settled facts and Threads, and flags questions for the author. Size the ceremony to the novel's Scale.
+
+## Condense
+
+1. Read the chapter, `codex/destination.md`, relevant Codex entries, `codex/threads.md`, outline, prior summaries, and `skeletons/chNN.md` if it exists. Call the Skill tool for "codex" and "grilling" when facts or author decisions need settling. Consult [LENSES.md](../codex/LENSES.md) for diagnostic questions.
+2. Write `summaries/chNN.md` as a [reverse outline](https://owl.purdue.edu/owl/general_writing/the_writing_process/reverse_outlining.html): per scene, record what happens, its function, value shift, and Threads touched by ID. Note drift from the chapter's skeleton, if any.
+3. Update `codex/threads.md`: record new plants, progress, and payoffs; replace any `(planned)` placement this chapter fulfils with the real chapter. Maintain stable IDs and statuses. Add settled new facts straight to the appropriate Codex entries.
+4. Raise contradictions with the Codex as questions to the author. Never silently fix either side; the author decides which wins. If a change moves plot or Destination, raise a Map ticket with Storymap.
+5. Run a continuity check: overdue Threads; high-emphasis unpaid Threads; MICE Threads closed out of nesting order; characters acting against their Codex entry without a visible choice; scenes with no value shift; and real-world or canon claims with no backing research, unrecorded Divergences, or known misportrayals (Grounding lens). Unbacked claims become research per the codex skill's "Ground, don't invent" rule. Flag findings; do not force a fix.
+
+## Summary shape
+
+```markdown
+# chNN — <working title>
+
+## Scene 1 — <identifier or brief label>
+- What happens:
+- Function:
+- Value shift:
+- Threads: T07, T12
+
+## Continuity and drift
+- ...
+```
+
+Use the leanest form that preserves useful retrieval. A Chapter skeleton is a plan, not a constraint that overwrites what the Manuscript actually did.
+
+## Evidence, then ask
+
+The Manuscript is evidence. Record what it shows, and let the author decide which discrepancies become canon.
