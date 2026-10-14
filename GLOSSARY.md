@@ -21,8 +21,20 @@ How wide or narrow the story is: target length, number of POV characters, geogra
 _Avoid_: scope (reserved for what is in or out of a planning effort)
 
 **Grounding**:
-What the story stands on that the author did not invent: source canon (fanfiction), historical events and periods, real places, real conditions, professions, real people. Listed in the **Destination**; facts resting on it come from research, never invention.
+What the story stands on that the author did not invent: source canon (fanfiction), historical events and periods, real places, real conditions, professions, real people. Listed in the **Destination**; facts resting on it come from research or a **Grounding policy**, never invention.
 _Avoid_: background, references
+
+**Grounding policy**:
+The author's standing rules for their **Grounding**, set in the **Destination**: which kinds of fact the author vouches for from their own knowledge, which always need research, and any story-wide **Divergence** stance.
+_Avoid_: exemption, whitelist
+
+**Supersede**:
+What a later chapter does to a **Codex** fact when the story moves it on (a goal shifts, someone dies, a name is revealed): the new fact replaces the old in its field, with the chapter cited. Unlike a contradiction, both were true at their point in the story.
+_Avoid_: overwrite, correct
+
+**Strand**:
+Which line of the story a chapter belongs to: the main line, backstory in the same world, or an alternate timeline. Tagged per chapter in the outline; differences between strands are not contradictions.
+_Avoid_: timeline (reserved for `codex/timeline.md`)
 
 **Divergence**:
 A deliberate, recorded departure of the story from its **Grounding** (an AU choice, a changed historical detail), noted on the **Codex** entry with what and why.
