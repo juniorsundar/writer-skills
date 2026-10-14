@@ -60,7 +60,7 @@ Do not ticket what cannot yet be phrased as a decision. Record that patch in Not
 
 ## Outline and chapter numbers
 
-`codex/outline.md` is one line per planned chapter, noting act position and Threads it plans to plant/pay. A serial groups chapters under `## Vol N` headings, each volume with its own acts; chapter numbers run continuously across volumes. Chapter numbers stay provisional until drafted. Renumbering requires a mechanical sweep across outline, tickets, skeletons, and summaries.
+`codex/outline.md` is one line per planned chapter, noting act position and Threads it plans to plant/pay. A written chapter's line starts `- chNN — <title> ·` and carries a **Strand** tag after the title when it is `backstory` or `alternate` (main is the default): `- ch10 — Born of Blood · alternate · …`. Summaries take their title from this line. A serial groups chapters under `## Vol N` headings, each volume with its own acts; chapter numbers run continuously across volumes. Chapter numbers stay provisional until drafted. Renumbering requires a mechanical sweep across outline, tickets, skeletons, and summaries.
 
 ## Invocation
 
@@ -70,7 +70,7 @@ Three modes. Work resolves one ticket per session, except research.
 
 1. Call the Skill tool for "grilling" and "codex" to settle the Destination. If condense Adopt left a draft, confirm or correct each `_Inferred:_` section with the author instead of starting blank. Grill breadth-first. Fire research subagents mid-grill when a question waits on a fact. Done when Scale (including width and, for a serial, volumes), Grounding, genre, tone, and arc type are settled, and the ending is sharp for the first volume (or the whole book, if not a serial). Every other section may read `_Open._` with a matching item in Not yet specified.
 2. Write `codex/destination.md`; create `map/map.md` with its link, Notes, Decisions so far, Not yet specified, and Out of scope.
-3. Create currently specifiable tickets, including, after condense Adopt, one per entry in `map/adopt-queue.md` (if present; then delete it) and per open Thread that needs a decision, and wire `Blocked by` in a second pass. Seed a research ticket for each Grounding item the plan leans on, then dispatch one subagent per research ticket with the research brief. Each subagent resolves its own ticket; append each gist to Decisions so far, and check that every promised research file exists.
+3. Create currently specifiable tickets, including, after condense Adopt, one per `Status: open` entry and one research ticket per `→ research` line in `map/adopt-queue.md` (if present; settled entries are already recorded in the Codex; then delete the queue) and per open Thread that needs a decision, and wire `Blocked by` in a second pass. Seed a research ticket for each Grounding item the plan leans on, then dispatch one subagent per research ticket with the research brief. Each subagent resolves its own ticket; append each gist to Decisions so far, and check that every promised research file exists.
 4. Stop. Charting resolves only research tickets.
 
 ### Work

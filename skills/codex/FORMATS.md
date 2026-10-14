@@ -9,8 +9,8 @@ Any entry may carry knowledge fields when the story runs on who knows what (dram
 
 Any entry may carry two Grounding fields:
 
-- `source: [[research/<topic>]]`: the research file that backs a real-world or canon fact.
-- `Diverges: <what>, because <why>`: a deliberate **Divergence** from Grounding.
+- `source: [[research/<topic>]]`: the research file that backs a real-world or canon fact. `source: author` instead only for a kind of fact the Destination's **Grounding policy** lists.
+- `Diverges: <what>, because <why>`: a deliberate **Divergence** from Grounding. Settle the why with the author when the Divergence is settled.
 
 ## Destination — `codex/destination.md`
 
@@ -29,6 +29,7 @@ Any entry may carry two Grounding fields:
 - Volumes (serials only):
 ## Grounding
 - <source canon / event / place / condition / profession / person>: [[research/<topic>]]
+- Policy: <kinds of fact the author vouches for (source: author)>; <kinds that always need research>; <story-wide Divergence stance, with why>
 ## Genre and obligatory scenes
 ## Tone
 ## Theme: Lie → Truth
@@ -44,6 +45,7 @@ Record the ending state and plot in enough detail to plan toward, not as prose. 
 
 ```markdown
 # <Name>
+- Identity (when the prose withholds who they are): <true identity>; named on the page from chNN | not yet | never
 - Role / story function:
 - Want vs. Need:
 - Ghost / Wound → Lie:
@@ -55,7 +57,7 @@ Record the ending state and plot in enough detail to plan toward, not as prose. 
 - First reveal / reader knowledge (if useful):
 ```
 
-Keep only decision-driving fields. Appearance and other continuity trivia are filled lazily when fixed by the Manuscript.
+Keep only decision-driving fields. Appearance and other continuity trivia are filled lazily when fixed by the Manuscript. Summaries and skeletons call a character what the prose calls them at that chapter; the Identity field alone holds what the page withholds.
 
 ## Ensemble — `codex/characters/<group>.md`
 
