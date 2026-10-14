@@ -37,8 +37,53 @@ done | grep . && fail=1
 
 affects_item='^(ch[0-9]+|act (I|II|III|IV)|vol [0-9]+( act (I|II|III|IV)| ending)?)$'
 for novel in "$@"; do
+  # Thread ledger: unique IDs, known kind and status, exactly one status line, a paid: line means status paid.
+  th="$novel/codex/threads.md"
+  if [ -f "$th" ]; then
+    awk '
+      function close_t() { if (id != "") {
+          if (nstatus != 1) print "FAIL threads.md: " id " has " nstatus " status lines"
+          if (paidline && status !~ /^paid \(ch[0-9]+\)$/) print "FAIL threads.md: " id " has a paid: line but status " status } }
+      /^T[0-9]+ · / { close_t(); id = $1; nstatus = 0; paidline = 0; status = ""
+          if (seen[id]++) print "FAIL threads.md: duplicate " id
+          split($0, f, " · ")
+          if (f[2] !~ /^(promise|callback|foreshadow|mystery|motif|red-herring)$/) print "FAIL threads.md: " id " bad kind " f[2]
+          if (f[3] !~ /^[MICE]$/) print "FAIL threads.md: " id " bad MICE tag " f[3]
+          next }
+      id != "" && /^  status: / { nstatus++; status = substr($0, 11)
+          if (status !~ /^(open|paid \(ch[0-9]+\)|dropped \(.+\))$/) print "FAIL threads.md: " id " bad status " status }
+      id != "" && /^  paid: / { paidline = 1 }
+      END { close_t() }' "$th" | grep . && fail=1
+    ids=" $(grep -o '^T[0-9]*' "$th" | tr '\n' ' ') "
+  fi
+
+  # Summaries: every manuscript chapter has one, it cites only known Threads, and its title matches the outline line.
+  ol="$novel/codex/outline.md"
+  for m in "$novel"/manuscript/ch*.md; do
+    [ -e "$m" ] || continue
+    c="$(basename "$m" .md)"; s="$novel/summaries/$c.md"
+    if [ ! -f "$s" ]; then [ -f "$novel/map/map.md" ] && err "$c: no summary"; continue; fi
+    if [ -f "$th" ]; then
+      for t in $(sed -n 's/^- Threads: *//p' "$s" | grep -o 'T[0-9]*'); do
+        [[ "$ids" == *" $t "* ]] || err "summaries/$c.md: cites unknown $t"
+      done
+    fi
+    if [ -f "$ol" ]; then
+      line="$(grep -m1 "^- $c — " "$ol")"
+      if [ -z "$line" ]; then err "outline.md: no line for $c"; else
+        want="$(echo "${line#- $c — }" | sed 's/ · .*//; s/: .*//')"
+        have="$(head -1 "$s" | sed "s/^# $c — //")"
+        [ "$have" = "$want" ] || err "summaries/$c.md: title '$have' differs from outline '$want'"
+      fi
+    fi
+  done
+
   tdir="$novel/map/tickets"
-  [ -d "$tdir" ] || { err "$novel: no map/tickets"; continue; }
+  if [ ! -d "$tdir" ]; then
+    # Mid-Adopt (a queue, no map yet) has no tickets until Chart runs.
+    [ -f "$novel/map/adopt-queue.md" ] && [ ! -f "$novel/map/map.md" ] || err "$novel: no map/tickets"
+    continue
+  fi
   for t in "$tdir"/*.md; do
     b="$(basename "$t")"
     [[ "$b" =~ ^[0-9]{2}-.+\.md$ ]] || err "$b: name is not NN-slug.md"

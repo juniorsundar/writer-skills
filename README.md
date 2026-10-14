@@ -48,7 +48,7 @@ Links between entries are Obsidian wikilinks, so a story repo can be opened as a
 
 ## The check script
 
-`skills/storymap/scripts/check.sh` lints a novel repo's map — ticket `Type`/`Status` values, that every `Blocked by` id exists, the `Affects:` syntax, that resolved tickets carry an `Answer`, and that Decisions-so-far lines stay short — and checks the skills' own frontmatter and links. It travels inside the `storymap` skill so it survives installation.
+`skills/storymap/scripts/check.sh` lints a novel repo: the Thread ledger (unique IDs, kinds, one status per Thread, `paid:` lines match status), summaries (one per manuscript chapter once charted, only known Thread IDs, titles matching the outline), and the map (ticket `Type`/`Status` values, that every `Blocked by` id exists, the `Affects:` syntax, that resolved tickets carry an `Answer`, Decisions-so-far lines stay short; skipped mid-Adopt). It also checks the skills' own frontmatter and links. It travels inside the `storymap` skill so it survives installation.
 
 ```bash
 skills/storymap/scripts/check.sh <novel-dir>              # lint
