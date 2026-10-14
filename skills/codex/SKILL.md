@@ -10,12 +10,14 @@ The **Codex** is the store of settled story facts. It is an active discipline du
 - Challenge claims that contradict the Codex. Surface the mismatch and ask which fact is true; never silently overwrite either side.
 - Sharpen vague facts and test them with edge cases: “What does Mara do if the key is lost?”
 - Write facts the moment they settle, whether discovered in planning or from the Manuscript. Record first-reveal chapter and reader-knowledge level when useful.
+- Record a Manuscript fact at the strength the page gives it: narration states it, a character claims it (quote them), or the text implies it (say so). An epithet stays an epithet until the page names who it is.
+- An entry holds the current state. When a later chapter **Supersedes** a fact, rewrite its field and cite the chapter; how it changed lives in summaries and Threads. A Thread whose question the page answers gets `paid: chNN`.
 - Add only what helps decide or preserve story continuity. Defer trivia such as appearance until the Manuscript fixes it.
 - Use the formats in [FORMATS.md](./FORMATS.md).
 
 ## Ground, don't invent
 
-When a fact rests on **Grounding** (source canon, history, a real place, condition, profession, or person), check `research/` first and cite it with `source: [[research/<topic>]]`. If research doesn't cover it, never invent the fact:
+When a fact rests on **Grounding** (source canon, history, a real place, condition, profession, or person), check `research/` first and cite it with `source: [[research/<topic>]]`, or `source: author` when the Destination's **Grounding policy** lists that kind of fact. Otherwise, never invent the fact:
 
 - **A decision in this session depends on it**: dispatch a background research subagent (Skill tool, "research", with the brief in FORMATS.md) and keep grilling whatever doesn't depend on it.
 - **Nothing depends on it yet**: raise a research ticket on the Map via Storymap.
