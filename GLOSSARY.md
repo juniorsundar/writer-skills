@@ -79,7 +79,7 @@ _Avoid_: template, beat sheet (when meaning something enforced)
 - A serial's **Destination** holds one ending per **Volume**; a **Chapter skeleton** sits in exactly one volume.
 - The author writes the **Manuscript** from **Chapter skeletons**; skills never cross that line.
 - Each finished **Manuscript** chapter yields one **Summary**, which updates the **Codex** and **Threads** and may raise **Map** questions.
-- **Codex** facts resting on **Grounding** link to the research file that backs them; departures are recorded as **Divergences**.
+- **Codex** facts resting on **Grounding** link to the research file that backs them, or cite the author where the **Grounding policy** allows; departures are recorded as **Divergences**.
 - **Summaries** and **Chapter skeletons** reference **Threads** by ID and **Codex** entries by link.
 
 ## Flagged ambiguities

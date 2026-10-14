@@ -44,15 +44,15 @@ for novel in "$@"; do
       function close_t() { if (id != "") {
           if (nstatus != 1) print "FAIL threads.md: " id " has " nstatus " status lines"
           if (paidline && status !~ /^paid \(ch[0-9]+\)$/) print "FAIL threads.md: " id " has a paid: line but status " status } }
-      /^T[0-9]+ · / { close_t(); id = $1; nstatus = 0; paidline = 0; status = ""
+      /^T[0-9]+[ \t]*·/ { close_t(); id = $1; nstatus = 0; paidline = 0; status = ""
           if (seen[id]++) print "FAIL threads.md: duplicate " id
-          split($0, f, " · ")
+          n = split($0, f, /[ \t]*·[ \t]*/)
           if (f[2] !~ /^(promise|callback|foreshadow|mystery|motif|red-herring)$/) print "FAIL threads.md: " id " bad kind " f[2]
           if (f[3] !~ /^[MICE]$/) print "FAIL threads.md: " id " bad MICE tag " f[3]
           next }
-      id != "" && /^  status: / { nstatus++; status = substr($0, 11)
+      id != "" && /^[ \t]+status:/ { nstatus++; status = $0; sub(/^[ \t]+status:[ \t]*/, "", status)
           if (status !~ /^(open|paid \(ch[0-9]+\)|dropped \(.+\))$/) print "FAIL threads.md: " id " bad status " status }
-      id != "" && /^  paid: / { paidline = 1 }
+      id != "" && /^[ \t]+paid:/ { paidline = 1 }
       END { close_t() }' "$th" | grep . && fail=1
     ids=" $(grep -o '^T[0-9]*' "$th" | tr '\n' ' ') "
   fi
@@ -71,9 +71,10 @@ for novel in "$@"; do
     if [ -f "$ol" ]; then
       line="$(grep -m1 "^- $c — " "$ol")"
       if [ -z "$line" ]; then err "outline.md: no line for $c"; else
-        want="$(echo "${line#- $c — }" | sed 's/ · .*//; s/: .*//')"
+        # The outline line starts with the summary title, then ends or continues with " ·" or ":".
         have="$(head -1 "$s" | sed "s/^# $c — //")"
-        [ "$have" = "$want" ] || err "summaries/$c.md: title '$have' differs from outline '$want'"
+        rest="${line#- $c — "$have"}"
+        { [ "$rest" != "$line" ] && [[ -z "$rest" || "$rest" == " ·"* || "$rest" == ":"* ]]; } || err "summaries/$c.md: title '$have' does not match outline line for $c"
       fi
     fi
   done
