@@ -55,4 +55,7 @@ Links between entries are Obsidian wikilinks, so a story repo can be opened as a
 ```bash
 skills/storymap/scripts/check.sh <novel-dir>              # lint
 skills/storymap/scripts/check.sh --frontier <novel-dir>   # list takeable tickets
+skills/codex/scripts/voice-stats.sh --selftest            # voice measurement self-test
 ```
+
+CI (`.github/workflows/check.yml`) runs the skills lint and the voice self-test on every push.

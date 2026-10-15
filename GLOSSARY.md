@@ -55,8 +55,12 @@ Something the text has set up for later: a promise (Chekhov's gun), callback, fo
 _Avoid_: setup, plant (as nouns for the whole entry)
 
 **Author voice**:
-How the author writes sentences in one novel: rhythm, diction, distance, comedic devices. Captured per novel in the **Codex** once enough **Manuscript** exists, with a section per POV when registers genuinely differ. It evolves as the author confirms deliberate changes.
+How the author writes sentences in one novel: rhythm, diction, distance, comedic devices. Captured per novel in the **Codex** once enough **Manuscript** exists, with a **Register** for each scene type the author deliberately writes differently. It evolves as the author confirms deliberate changes.
 _Avoid_: style, tone (tone is the reader's felt register, recorded in the **Destination**), voice alone (character voice tags are a different thing)
+
+**Register**:
+A scene type (exposition, set-piece action, ritual) whose measurements the author confirms differ on purpose. It has its own baseline chapters, so its chapters are not flagged as deviations.
+_Avoid_: variant, mode
 
 **Voice anchor**:
 A short excerpt of the author's own **Manuscript**, cited by chapter, that shows the **Author voice** at its most characteristic. Imitation and deviation checks compare against anchors, not adjectives.

@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 Input is finished Manuscript: `manuscript/chNN.md`. Read it only. This skill creates **Summaries**, updates settled facts and Threads, and flags questions for the author. Size the ceremony to the novel's Scale.
 
-Two modes. **Condense** handles one new chapter in a charted repo. **Adopt** reverse-engineers an existing story that has no Codex yet: for Adopt, read [ADOPT.md](./ADOPT.md) and follow it instead of the steps below.
+Three modes. **Condense** handles one new chapter in a charted repo. **Adopt** reverse-engineers an existing story that has no Codex yet: for Adopt, read [ADOPT.md](./ADOPT.md) and follow it instead of the steps below. **Voice** runs step 7 alone; when `codex/voice.md` already exists, it runs one probe session on its unconfirmed features instead.
 
 ## Condense
 
@@ -15,8 +15,8 @@ Two modes. **Condense** handles one new chapter in a charted repo. **Adopt** rev
 3. Update `codex/threads.md`: record new plants, progress, and payoffs; replace any `(planned)` placement this chapter fulfils with the real chapter. Maintain stable IDs and statuses. Add settled new facts straight to the appropriate Codex entries.
 4. Raise contradictions with the Codex as questions to the author: two facts that cannot both hold at the same point in the same **Strand**. Never silently fix either side; the author decides which wins. A fact the story has moved on is **Superseded**, not contradicted (codex skill). If a change moves plot or Destination, raise a Map ticket with Storymap.
 5. Run a continuity check: overdue Threads; high-emphasis unpaid Threads; MICE Threads closed out of nesting order; characters acting against their Codex entry without a visible choice; scenes with no value shift; and real-world or canon claims with no backing research, unrecorded Divergences, or known misportrayals (Grounding lens). Unbacked claims become research per the codex skill's "Ground, don't invent" rule. Flag findings; do not force a fix.
-6. When `codex/voice.md` exists, run `../codex/scripts/voice-stats.sh --outliers <the Baseline chapters in voice.md> -- manuscript/chNN.md` (path relative to this skill). Flag every measured-threshold breach and deviation from a confirmed feature, asking one question per deviation: “chNN does X against your confirmed Y. Deliberate?” Deliberate: update the profile and cite this chapter. Mistake: leave the profile and flag the passage for the author. Record tolerant and unconfirmed observations without enforcement. A deliberate register shift becomes a per-POV or per-chapter variant.
-7. If three or more Manuscript chapters now exist and `codex/voice.md` does not, capture it once as described in [FORMATS.md](../codex/FORMATS.md), marking sections `_Inferred:_` for author confirmation. Run the first probe session as a dedicated session. Below three chapters, create no voice entry or voice check.
+6. When `codex/voice.md` exists, run `../codex/scripts/voice-stats.sh --outliers <Baseline chapters> -- manuscript/chNN.md` (path relative to this skill). If the summary's scenes match a **Register** in voice.md, use that register's Baseline instead. Flag every measured-threshold breach and deviation from a confirmed feature, asking one question per deviation: “chNN does X against your confirmed Y. Deliberate?” Deliberate: update the profile and cite this chapter. Mistake: leave the profile and flag the passage for the author. Record tolerant and unconfirmed observations without enforcement. A deliberate scene-type shift becomes a Register.
+7. If three or more Manuscript chapters now exist and `codex/voice.md` does not, capture it once as described in [FORMATS.md](../codex/FORMATS.md), marking sections `_Inferred:_` for author confirmation. Start from `voice-stats.sh --table manuscript/ch*.md`. Run the first probe session as a dedicated session. Below three chapters, create no voice entry or voice check.
 
 ## Summary shape
 

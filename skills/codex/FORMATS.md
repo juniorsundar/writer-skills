@@ -100,7 +100,7 @@ Record dated or ordered events only when sequence matters to continuity. Use a c
 
 ## Author voice — `codex/voice.md`
 
-Create this file after three **Manuscript** chapters exist. The first capture is _Inferred:_ for author confirmation. Keep it descriptive: measurements, probe responses, and 3–6 short **Voice anchors** cited by chapter. Add per-POV sections only when registers genuinely differ.
+Create this file after three **Manuscript** chapters exist. The first capture is _Inferred:_ for author confirmation. Keep it descriptive: measurements, probe responses, and 3–6 short **Voice anchors** cited by chapter.
 
 ```markdown
 # Author voice
@@ -108,9 +108,11 @@ Create this file after three **Manuscript** chapters exist. The first capture is
 _Inferred:_ confirm with author
 
 ## Measured
-- Baseline: ch01–ch03 (the chapters these numbers and the outlier bounds come from; extend it only when the author confirms an evolution)
-- Sentence length: mean …; median …; p5 …; p95 …
-- Paragraph length, dialogue share, dialogue tags, tense signal: …
+- Baseline: ch01–chNN (every chapter at capture, minus author-approved exclusions with reasons; extend only when the author confirms an evolution)
+- Sentence length, narration length, paragraph length, dialogue share, dialogue tags, tense signal: …
+
+## Registers
+- <name>: <scene type, e.g. exposition and set-piece action>. Baseline: chNN, chNN. Narration median …. Author: “…”
 
 ## Elicited
 | Feature | Status | Flip and author answer | Evidence |
@@ -121,11 +123,11 @@ _Inferred:_ confirm with author
 - chNN: “…”
 ```
 
-**Confirmed** means the author called a flip wrong; deviations are flagged. **Tolerant** means acceptable; record without enforcement. **Unconfirmed** is recorded without enforcement. A better answer is an author-only note and leaves the profile unchanged. Record deliberate evolution with its chapter; record register shifts as per-POV or per-chapter variants.
+**Confirmed** means the author called a flip wrong; deviations are flagged. **Tolerant** means acceptable; record without enforcement. **Unconfirmed** is recorded without enforcement. A better answer is an author-only note and leaves the profile unchanged. Record deliberate evolution with its chapter. A **Register** is a scene type the author writes differently on purpose; its chapters form a second baseline. A feature whose reason is a character's nature goes in that character's Voice tags and applies only in their POV.
 
 ## Probes
 
-The author sentence is followed by version A with exactly one feature flipped, then: “Is A wrong, acceptable, or better?” Record the answer verbatim. Probe 5–8 sentences per session, selected from measured outliers and recurrences. Scriptable features are measured; probes cover diction, rhythm, figurative language, comedy, and psychic distance. Re-check unconfirmed features about once per volume. The list grows by author decision.
+The author sentence is followed by version A with exactly one feature flipped, then: “Is A wrong, acceptable, or better?” Record the answer verbatim. An answer without one of the three stays unconfirmed: ask once for the verdict. Probe 5–8 sentences per session, selected from measured outliers and recurrences. Scriptable features are measured; probes cover diction, rhythm, figurative language, comedy, and psychic distance. Re-check unconfirmed features about once per volume. The list grows by author decision.
 
 | Feature | Fixed transformation |
 |---|---|
@@ -138,7 +140,7 @@ The author sentence is followed by version A with exactly one feature flipped, t
 | Dialogue tagging | swap “said” for an action beat, or the reverse |
 | Paragraph break | join to the previous paragraph, or split |
 
-`scripts/voice-stats.sh` (in this skill) reports deterministic chapter measurements and can list sentence-length outliers against a baseline. Its comments document each heuristic's limits.
+`scripts/voice-stats.sh` (in this skill) reports deterministic chapter measurements, a per-chapter `--table`, and sentence-length `--outliers` against a baseline. Narration length excludes quoted sentences, so dialogue cannot mask a shift. Its comments document each heuristic's limits.
 
 ## Research — `research/<topic>.md`
 
