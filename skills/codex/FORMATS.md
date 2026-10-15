@@ -98,6 +98,48 @@ Prefer limits to powers. For magic that resolves conflict, track how much the re
 
 Record dated or ordered events only when sequence matters to continuity. Use a consistent date/time convention and link people, places, and Threads. Flag uncertainty instead of inventing precision.
 
+## Author voice — `codex/voice.md`
+
+Create this file after three **Manuscript** chapters exist. The first capture is _Inferred:_ for author confirmation. Keep it descriptive: measurements, probe responses, and 3–6 short **Voice anchors** cited by chapter. Add per-POV sections only when registers genuinely differ.
+
+```markdown
+# Author voice
+
+_Inferred:_ confirm with author
+
+## Measured
+- Baseline: ch01–ch03 (the chapters these numbers and the outlier bounds come from; extend it only when the author confirms an evolution)
+- Sentence length: mean …; median …; p5 …; p95 …
+- Paragraph length, dialogue share, dialogue tags, tense signal: …
+
+## Elicited
+| Feature | Status | Flip and author answer | Evidence |
+|---|---|---|---|
+| … | confirmed / tolerant / unconfirmed | … | chNN |
+
+## Voice anchors
+- chNN: “…”
+```
+
+**Confirmed** means the author called a flip wrong; deviations are flagged. **Tolerant** means acceptable; record without enforcement. **Unconfirmed** is recorded without enforcement. A better answer is an author-only note and leaves the profile unchanged. Record deliberate evolution with its chapter; record register shifts as per-POV or per-chapter variants.
+
+## Probes
+
+The author sentence is followed by version A with exactly one feature flipped, then: “Is A wrong, acceptable, or better?” Record the answer verbatim. Probe 5–8 sentences per session, selected from measured outliers and recurrences. Scriptable features are measured; probes cover diction, rhythm, figurative language, comedy, and psychic distance. Re-check unconfirmed features about once per volume. The list grows by author decision.
+
+| Feature | Fixed transformation |
+|---|---|
+| Sentence length | split in two, or merge with its neighbour |
+| Diction register | swap the most marked word for its plainest synonym |
+| Rhythm / cadence | reorder clauses, keeping the words |
+| Figurative language | replace the image with a literal statement |
+| Comic device | remove the joke, keep the information |
+| Psychic distance | one step closer to or further from the POV |
+| Dialogue tagging | swap “said” for an action beat, or the reverse |
+| Paragraph break | join to the previous paragraph, or split |
+
+`scripts/voice-stats.sh` (in this skill) reports deterministic chapter measurements and can list sentence-length outliers against a baseline. Its comments document each heuristic's limits.
+
 ## Research — `research/<topic>.md`
 
 Research files sit outside the Codex: they record the world's or the source's truth, and the Codex records the story's. Brief for every research subagent:

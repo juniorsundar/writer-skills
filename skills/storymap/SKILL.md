@@ -23,6 +23,7 @@ research/<topic>.md  # sourced real-world facts
 research/canon/<topic>.md  # source-canon facts (fanfiction)
 skeletons/chNN.md
 summaries/chNN.md
+passages/chNN-<slug>.md  # agent-written passages for the author to adapt
 manuscript/chNN.md  # author only; skills never write prose here (condense Adopt imports verbatim)
 ```
 

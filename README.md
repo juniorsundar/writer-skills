@@ -12,6 +12,7 @@ A novel is too large for one session, so the plan lives **on disk** rather than 
 | `codex` | model-invoked | The discipline used during any session: check claims against the codex, sharpen vague facts, test them with edge cases, and write each settled fact the moment it settles. Defines the entry formats and the diagnostic lenses. |
 | `skeleton` | `/skill:skeleton` | Grills one chapter into a scene-by-scene skeleton. Refuses while any unresolved ticket affects that chapter. No prose. |
 | `condense` | `/skill:condense` | Two modes. **Condense** turns a finished chapter into a summary and updates the codex, threads and continuity. **Adopt** reverse-engineers a story written before these skills, building the codex from the manuscript and handing off to `storymap`. |
+| `passage` | `/skill:passage` | Writes a short passage for one planned scene from the novel's Author voice profile and Codex, into `passages/` for the author to adapt. |
 
 ## Install
 
@@ -41,6 +42,7 @@ research/<topic>.md          # sourced real-world facts
 research/canon/<topic>.md    # source-canon facts (fanfiction)
 skeletons/chNN.md
 summaries/chNN.md
+passages/chNN-<slug>.md
 manuscript/chNN.md           # the author's prose; only condense Adopt imports it, verbatim
 ```
 

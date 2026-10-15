@@ -1,0 +1,5 @@
+interface:
+  display_name: "Passage"
+  short_description: "Write a short passage in the author's voice"
+policy:
+  allow_implicit_invocation: false

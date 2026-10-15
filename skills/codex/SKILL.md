@@ -32,12 +32,17 @@ codex/
   outline.md
   threads.md
   timeline.md
+  voice.md
   characters/
   locations/
   world/
 ```
 
 Use Obsidian wikilinks for Codex entries. A **Thread** has a stable ID and one ledger entry; skeletons and summaries refer to Threads by ID.
+
+## Author voice
+
+**Author voice** describes this novel's sentence-making, recorded in `codex/voice.md` after three **Manuscript** chapters exist. Condense captures it once, with `_Inferred:_` sections for author confirmation. Probes follow the closed list and protocol in [FORMATS.md](./FORMATS.md); statuses are confirmed (wrong flips are flagged), tolerant (recorded), and unconfirmed (recorded). A “better” answer leaves the profile unchanged.
 
 ## Iceberg
 

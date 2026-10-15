@@ -54,8 +54,19 @@ _Avoid_: bible, story bible, lore
 Something the text has set up for later: a promise (Chekhov's gun), callback, foreshadowing, mystery, motif, or red herring. Carries a stable ID (`T07`), a MICE tag, an emphasis level, where it was planted and progressed, and a status: open, paid, or dropped.
 _Avoid_: setup, plant (as nouns for the whole entry)
 
+**Author voice**:
+How the author writes sentences in one novel: rhythm, diction, distance, comedic devices. Captured per novel in the **Codex** once enough **Manuscript** exists, with a section per POV when registers genuinely differ. It evolves as the author confirms deliberate changes.
+_Avoid_: style, tone (tone is the reader's felt register, recorded in the **Destination**), voice alone (character voice tags are a different thing)
+
+**Voice anchor**:
+A short excerpt of the author's own **Manuscript**, cited by chapter, that shows the **Author voice** at its most characteristic. Imitation and deviation checks compare against anchors, not adjectives.
+
+**Passage**:
+Short agent-written prose in the **Author voice** (a description, ambience) for one scene, written to `passages/` and never to the **Manuscript**. The author rewrites or pastes it in themselves.
+_Avoid_: sketch (a sketch ticket is 2–3 alternatives to react to), draft, filler
+
 **Chapter skeleton**:
-The structure of one chapter, scene by scene, with no prose. The most detailed artifact any skill produces: the ceiling of "plan, don't do".
+The structure of one chapter, scene by scene, with no prose. The most detailed planning artifact: "plan, don't do" holds for every skill except `passage`, whose output is a **Passage**.
 _Avoid_: chapter draft, scene draft, outline (outline is the whole-book plot)
 
 **Summary**:
@@ -77,7 +88,7 @@ _Avoid_: template, beat sheet (when meaning something enforced)
 
 - One repo holds exactly one novel (or one serial), one **Destination**, one **Map**, one **Codex**.
 - A serial's **Destination** holds one ending per **Volume**; a **Chapter skeleton** sits in exactly one volume.
-- The author writes the **Manuscript** from **Chapter skeletons**; skills never cross that line.
+- The author writes the **Manuscript** from **Chapter skeletons**; no skill writes into it. **Passages** sit beside it, never inside.
 - Each finished **Manuscript** chapter yields one **Summary**, which updates the **Codex** and **Threads** and may raise **Map** questions.
 - **Codex** facts resting on **Grounding** link to the research file that backs them, or cite the author where the **Grounding policy** allows; departures are recorded as **Divergences**.
 - **Summaries** and **Chapter skeletons** reference **Threads** by ID and **Codex** entries by link.
@@ -85,3 +96,4 @@ _Avoid_: template, beat sheet (when meaning something enforced)
 ## Flagged ambiguities
 
 - "bible" rejected as the term for the settled-facts store (too religious). Resolved: **Codex**.
+- "voice" meant three things: a character's speech (voice tags), the reader's felt register (**Tone**), and how the author writes. Resolved: the last is **Author voice**.
